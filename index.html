@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        // function sendEmail() {
+        //     Email.send({
+        //         Host: "smtp.gmail.com",
+        //         Username: "joneymaske@gmail.com",
+        //         Password: "Joney1315",
+        //         To: 'sushmitachaudhari15@gmail.com',
+        //         From: "joneymaske@gmail.com",
+        //         Subject : "This is the subject",
+        //         Body: "And this is the body"
+        //     }).then(
+        //         message => alert("Message send")
+        //     );
+        // }
+        
+function sendEmail() {
+         var mailSubject = document.getElementById("mailSubject").value
+         var mailBody = document.getElementById("mailBody").value
+            Email.send({
+                //  Host: "smtp.gmail.com",
+                //   Username: "joneymaske@gmail.com",
+                //   Password: "Joney1315",
+                SecureToken: "e1e1a5eb-48fb-4cfc-9987-4c525432701d",
+                From: "joneymaske@gmail.com",
+                To: 'srd151306@gmail.com',
+                Subject: mailSubject,
+                Body: mailBody
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Subject:</td>
+            <td><input type="text" id="mailSubject"></td>
+        </tr>
+        <tr>
+            <td>Body:</td>
+            <td><input type="text" id="mailBody"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" onclick="sendEmail();" value="Send the mail"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
